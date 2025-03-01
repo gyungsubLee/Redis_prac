@@ -41,6 +41,8 @@ services:
     container_name: my-redis
     ports:
       - "6379:6379"
+    volumes:
+      - redis_data:/var/lib/redis
     restart: unless-stopped
     healthcheck:
       test: [ "CMD", "redis-cli", "ping" ]
@@ -50,3 +52,4 @@ services:
 
 volumes:
   mysql_data:
+  redis_data:
