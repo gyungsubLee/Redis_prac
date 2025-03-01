@@ -15,14 +15,13 @@ spring:
     properties:
       hibernate:
         format_sql: true
-
-  redis:
-    host: ${SPRING_REDIS_HOST}
-    port: ${SPRING_REDIS_PORT}
-
+    defer-datasource-initialization: true
   sql:
     init:
       mode: always
+  redis:
+    host: ${SPRING_REDIS_HOST}
+    port: ${SPRING_REDIS_PORT}
 
 logging:
   level:
